@@ -1,0 +1,145 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.app-header {
+  background: var(--bg-tertiary);
+  border-bottom: 2px solid var(--accent-primary);
+  padding: 20px 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo-section h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.tagline {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.header-controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.view-toggle {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: var(--bg-primary);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.view-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+/* Main Content */
+.app-main {
+  flex: 1;
+  padding: 30px 40px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  display: grid;
+  gap: 30px;
+  min-height: calc(100vh - 250px);
+}
+
+.content-wrapper.chat-view {
+  grid-template-columns: 1fr;
+}
+
+.content-wrapper.data-view {
+  grid-template-columns: 1fr 1fr;
+}
+
+.chat-section {
+  transition: all 0.3s ease;
+}
+
+.chat-section.minimized {
+  /* Styles when data view is shown */
+}
+
+.data-section {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  overflow: auto;
+}
+
+/* Footer */
+.app-footer {
+  background: var(--bg-tertiary);
+  border-top: 1px solid var(--border-color);
+  padding: 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.app-footer p {
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .content-wrapper.data-view {
+    grid-template-columns: 1fr;
+  }
+  
+  .app-header {
+    padding: 15px 20px;
+  }
+  
+  .app-main {
+    padding: 20px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-section h1 {
+    font-size: 1.5rem;
+  }
+  
+  .header-controls {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .view-toggle {
+    width: 100%;
+  }
+}

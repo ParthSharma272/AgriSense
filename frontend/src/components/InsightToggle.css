@@ -1,0 +1,73 @@
+.insight-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.toggle-container {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.toggle-container input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.toggle-slider:before {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background: var(--text-secondary);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.toggle-container input:checked + .toggle-slider {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  border-color: transparent;
+  box-shadow: 0 0 15px var(--shadow);
+}
+
+.toggle-container input:checked + .toggle-slider:before {
+  transform: translateX(30px);
+  background: var(--bg-primary);
+}
+
+.toggle-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-left: 5px;
+}
+
+.toggle-description {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .insight-toggle {
+    width: 100%;
+  }
+}
