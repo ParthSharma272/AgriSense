@@ -65,57 +65,6 @@ It directly connects to live data.gov.in datasets, harmonizes their differing fo
 
 ---
 
-## 🧱 Project Structure
-
-```
-agrisense/
-│
-├── backend/
-│   ├── main.py                    # FastAPI app entry point
-│   ├── config.py                  # Configuration and settings
-│   ├── init_agrisense.py          # Initialization script
-│   │
-│   ├── routes/
-│   │   ├── chat.py                # Chat and Q&A endpoints
-│   │   └── visualize.py           # Visualization endpoints
-│   │
-│   ├── models/
-│   │   ├── llm_rag.py             # RAG pipeline implementation
-│   │   ├── datafusion.py          # Data fusion and querying
-│   │   └── database.py            # Database models and schema
-│   │
-│   ├── utils/
-│   │   ├── fetch_datasets.py      # Data.gov.in API integration
-│   │   ├── ocr_parser.py          # PDF/OCR parsing utilities
-│   │   └── chart_builder.py       # Automatic chart generation
-│   │
-│   ├── requirements.txt           # Python dependencies
-│   └── .env.example               # Environment variables template
-│
-├── frontend/
-│   ├── src/
-│   │   ├── App.jsx                # Main React component
-│   │   ├── main.jsx               # React entry point
-│   │   ├── index.css              # Global styles
-│   │   │
-│   │   └── components/
-│   │       ├── ChatBox.jsx        # Chat interface
-│   │       ├── DataVisualizer.jsx # Visualization component
-│   │       └── InsightToggle.jsx  # Policy mode toggle
-│   │
-│   ├── index.html                 # HTML template
-│   ├── package.json               # Node dependencies
-│   └── vite.config.js             # Vite configuration
-│
-├── data/
-│   ├── rainfall.csv               # Sample rainfall data
-│   └── crop_production.csv        # Sample crop production data
-│
-└── README.md                      # This file
-```
-
----
-
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -417,7 +366,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - **Data Sources**: data.gov.in, IMD, Ministry of Agriculture
 - **AI Models**: Hugging Face, Sentence Transformers
-- **Community**: Open source contributors
 
 ---
 
